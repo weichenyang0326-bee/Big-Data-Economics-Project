@@ -18,16 +18,14 @@ This is the project of Fall 2024 Big Data Economics(09010510) NJU.
 ## 3. 识别策略与计量设定
 ### 3.1 双向固定效应（TWFE）
 设家庭 \(i\)、年份 \(t\)、地区 \(p(i,t)\)。基准模型：
-\[
-y_{it}=\beta\,\text{FinIndex}_{p(i,t),t}+X_{it}'\gamma+\mu_i+\tau_t+\varepsilon_{it},
-\]
-其中 \(y_{it}\) 为消费结构升级度，\(\mu_i\) 为家庭固定效应，\(\tau_t\) 为年份固定效应。标准误按地区聚类/双向聚类稳健。
+
+$y_{it}=\beta\,\text{FinIndex}_{p(i,t),t}+X_{it}'\gamma+\mu_i+\tau_t+\varepsilon_{it}$
+
+其中 $y_{it}$ 为消费结构升级度，$\mu_i$ 为家庭固定效应，$\tau_t\$为年份固定效应。标准误按地区聚类/双向聚类稳健。
 
 ### 3.2 内生性处理（IV / 滞后项）
 - **工具变量一阶式**：
-\[
-\text{FinIndex}_{pt}=\pi\,Z_{pt}+X_{pt}'\delta+\mu_p+\tau_t+u_{pt},
-\]
+$\text{FinIndex}_{pt}=\pi\,Z_{pt}+X_{pt}'\delta+\mu_p+\tau_t+u_{pt}$,
 其中 \(Z_{pt}\) 为**距杭州的球面距离**与**外省数字普惠金融指数均值**的交互项（引入时间变化），利用地理摩擦与外生扩散作为强排他来源。
 - **替代设定**：使用 \(\text{FinIndex}_{p,t-1}\) 的**滞后一期**缓解反向因果与同周期共同冲击。
 
